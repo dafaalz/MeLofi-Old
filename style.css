@@ -177,6 +177,13 @@ header h1 {
     padding: 24px 16px;
     overflow-y: auto;
     transition: var(--transition-smooth);
+    z-index: 1100;
+}
+
+/* Sidebar collapsed state */
+.sidebar.collapsed {
+    transform: translateX(-100%);
+    transition: var(--transition-smooth);
 }
 
 .sidebar-menu {
@@ -218,7 +225,12 @@ main.app-content {
     margin-top: 60px;
     padding: 32px;
     min-height: calc(100vh - 60px);
-    transition: var(--transition-smooth);
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+main.app-content.collapsed {
+    margin-left: 0;
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #container {
@@ -758,10 +770,21 @@ h1, h2, #content-heading {
     bottom: 0;
     left: 260px;
     right: 0;
+    z-index: 999;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Responsive and sidebar-collapsed handling for footer */
 @media (max-width: 1024px) {
     .footer {
         left: 0;
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
+}
+
+/* Sidebar collapsed state for footer positioning */
+.flex-wrapper.sidebar-collapsed .footer,
+.footer.collapsed {
+    left: 0;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

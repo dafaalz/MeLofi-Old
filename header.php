@@ -18,13 +18,11 @@
 <nav class="app-header">
   <div class="nav-left">
     <button class="sidebar-toggle">☰</button>
-    <a href="index.php" class="nav-link">Home</a>
-    <?php if($_SESSION['level_access'] == 'admin') {
-      echo "<a href=\"adminPage.php\" class=\"nav-link\">Admin Page</a>";
+ <li><a href="library.php" class="nav-link">Home</a></li>
+      <?php if($_SESSION['level_access'] == 'admin') {
+      echo "<li><a href=\"adminPage.php\" class=\"nav-link\">Admin Page</a></li>";
       };?>
-    <a href="library.php" class="nav-link">Library</a>
-    <a href="store.php" class="nav-link">Store</a>
-  </div>
+      <li><a href="store.php" class="nav-link">Store</a></li>
   <div class="nav-right">
     <!-- Search button triggers modal -->
     <button class="nav-icon" onclick="openSearchModal()">🔍</button>

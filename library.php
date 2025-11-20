@@ -54,9 +54,9 @@ while($row = mysqli_fetch_assoc($result_rekomendasi)) {
 }
 
 include 'header.php';
-include 'sidebar.php';
 ?>
-
+<div class="flex-wrapper">
+<?php include 'sidebar.php'; ?>
 <main class="app-content">
     <div id="container">
         <div id="header">
@@ -313,5 +313,5 @@ include 'sidebar.php';
         }
     </script>
 </main>
-
 <?php include 'footer.php'; ?>
+</div>
