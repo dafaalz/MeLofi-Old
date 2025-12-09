@@ -52,9 +52,10 @@ $artists_query = "SELECT id_artis, nama_artis FROM artis ORDER BY nama_artis";
 $artists = mysqli_query($connect, $artists_query);
 
 include 'header.php';
-include 'sidebar.php';
-?>
 
+?>
+<div class="flex-wrapper">
+    <?php include 'sidebar.php'; ?>
 <main class="app-content" style="padding: 20px;">
     <h1 id="content-heading">Admin Dashboard</h1>
     
@@ -321,3 +322,4 @@ function playPauseTrack(audioId, button) {
 </script>
 
 <?php include 'footer.php'; ?>
+</div>

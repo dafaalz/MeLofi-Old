@@ -15,8 +15,11 @@ $album = mysqli_fetch_assoc($result);
 $artis_result = mysqli_query($connect, "SELECT * FROM artis");
 
 include 'header.php';
-include 'sidebar.php';
 ?>
+
+<div class="flex-wrapper">
+
+<?php include 'sidebar.php'; ?>
 
 <main class="app-content">
     <div class="edit-container">
@@ -69,3 +72,4 @@ document.getElementById('cover_album').addEventListener('change', function() {
 </script>
 
 <?php include 'footer.php'; ?>
+</div>

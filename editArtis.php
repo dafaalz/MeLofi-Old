@@ -13,9 +13,10 @@ $result = mysqli_query($connect, $query);
 $artis = mysqli_fetch_assoc($result);
 
 include 'header.php';
-include 'sidebar.php';
-?>
 
+?>
+<div class="flex-wrapper">
+<?php   include 'sidebar.php'; ?>
 <main class="app-content">
     <div class="edit-container">
         <h2 class="page-title">Edit Artis</h2>
@@ -55,3 +56,4 @@ document.getElementById('foto_profil').addEventListener('change', function() {
 </script>
 
 <?php include 'footer.php'; ?>
+</div>

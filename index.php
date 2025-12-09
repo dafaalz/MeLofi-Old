@@ -6,13 +6,13 @@
     <title>Melo-fi</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body >
     <header>
         <h1 style="margin: 1%, ">Melo-fi</h1>
     </header>
 
     <main>
-        <div id="container" style="max-width: 80%;">
+        <div id="container" style="max-width: 80%; margin: 0 auto; ">
             <div id="mainbox">
                 <h2>Login ke Akun Anda</h2><br>
                 <form action="login.php" method="post" autocomplete="on" novalidate>

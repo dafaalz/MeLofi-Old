@@ -15,7 +15,6 @@ $artisList = mysqli_query($connect, "SELECT * FROM artis");
 $albumList = mysqli_query($connect, "SELECT album.*, artis.nama_artis FROM album JOIN artis ON album.id_artis = artis.id_artis");
 
 include 'header.php';
-include 'sidebar.php';
 ?>
 
 <style>
@@ -71,6 +70,8 @@ include 'sidebar.php';
         gap: 0.5rem;
     }
 </style>
+<div class="flex-wrapper">
+<?php include 'sidebar.php'; ?>
 
 <main class="app-content" style="padding: 20px;">
     <div class="header-content">
@@ -340,3 +341,4 @@ setupTableSearchPagination('section:nth-of-type(5) table', 'searchAlbum', 'prevA
 </script>
 
 <?php include 'footer.php'; ?>
+</div>

@@ -18,20 +18,19 @@
 <nav class="app-header">
   <div class="nav-left">
     <button class="sidebar-toggle">☰</button>
- <li><a href="library.php" class="nav-link">Home</a></li>
-      <?php if($_SESSION['level_access'] == 'admin') {
+    <li><a href="library.php" class="nav-link">Home</a></li>
+    <?php if($_SESSION['level_access'] == 'admin') {
       echo "<li><a href=\"adminPage.php\" class=\"nav-link\">Admin Page</a></li>";
-      };?>
-      <li><a href="store.php" class="nav-link">Store</a></li>
+    };?>
+    <li><a href="store.php" class="nav-link">Store</a></li>
+  </div>
   <div class="nav-right">
     <!-- Search button triggers modal -->
     <button class="nav-icon" onclick="openSearchModal()">🔍</button>
-    
     <!-- Shopping Cart Icon -->
     <button class="nav-icon cart-icon" onclick="openCart()">
         🛒 <span class="cart-count" id="cartCount">0</span>
     </button>
-    
     <div class="user-menu">
         <span class="username"><?php echo htmlspecialchars($username) ?></span>
         <div class="user-dropdown">
@@ -69,7 +68,44 @@
     </div>
 </div>
 
+
+
 <style>
+li::marker {
+  content: "";
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-left {
+    flex: 1 1 auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.nav-left li {
+    list-style: none;
+}
+.nav-right {
+    flex: 0 0 auto;
+}
+
+@media (max-width: 768px) {
+  .nav-left, .nav-right {
+    gap: 8px;
+  }
+  .nav-left {
+    font-size: 14px;
+  }
+}
+
+a {
+    text-decoration: none;
+}
 .user-menu {
     position: relative;
     display: inline-block;
